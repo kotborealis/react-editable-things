@@ -44,9 +44,11 @@ text value`,
     this.setState(newState);
   };
 
-  isStringAcceptable = (string) => {
-    return (string.length >= 1);  // Minimum 4 letters long
-  };
+  isStringAcceptable = (string) => new Promise(resolve => {
+    setTimeout(() => {
+      resolve(string.length >= 1);
+    }, 500);
+  });
 
   isStringEvenNumber = (string) => {
     console.log('is even: ' + string);

@@ -1,3 +1,6 @@
+require("babel-core/register");
+require("babel-polyfill");
+
 import RIEToggle from './RIEToggle';
 import RIEStatefulBase from './RIEStatefulBase';
 import RIETextArea from './RIETextArea'

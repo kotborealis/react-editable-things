@@ -32,9 +32,9 @@ export default class RIEBase extends React.Component {
         className: React.PropTypes.string
     };
 
-    doValidations = (value) => {
+    doValidations = async (value) => {
         if(this.props.validate) {
-            this.setState({invalid: !this.props.validate(value)});
+            this.setState({invalid: !(await this.props.validate(value))});
         } else if (this.validate) {
             this.setState({invalid: !this.validate(value)});
         }
