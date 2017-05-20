@@ -32,6 +32,8 @@ export default class RIEBase extends React.Component {
         className: React.PropTypes.string
     };
 
+    forceEdit = () => this.setState({editing: true});
+
     doValidations = async (value) => {
         if(this.props.validate) {
             this.setState({invalid: !(await this.props.validate(value))});
